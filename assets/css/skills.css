@@ -1,0 +1,64 @@
+/* Hero */
+.skills-hero {
+    height: 50vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    /* background: linear-gradient(to right, #141e30, #243b55); */
+    color: white;
+}
+
+/* Card */
+.skill-card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Hover احترافي */
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    /* box-shadow: 0 15px 35px rgba(0,0,0,0.2); */
+    box-shadow: 0 0 15px rgba(37,117,252,0.5),
+                0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Level Badge */
+.level {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
+
+/* Progress */
+.progress {
+    height: 8px;
+    border-radius: 10px;
+    background: #eee;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    transition: width 1.5s ease;
+}
+
+/* Fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,61 @@
+/* Hero */
+.about-hero {
+    height: 60vh;
+    /* background: linear-gradient(to right, #141e30, #243b55); */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+}
+
+/* Skills */
+.skills-section {
+    background: #f8f9fa;
+}
+
+.skill-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.skill-box:hover {
+    transform: translateY(-5px);
+    background: #2575fc;
+    color: white;
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 9px;
+
+}
+
+.cta .btn {
+    padding: 10px 30px;
+    
+}
+
+/* Fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}

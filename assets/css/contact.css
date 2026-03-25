@@ -1,0 +1,87 @@
+/* Hero */
+.contact-hero {
+    height: 50vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
+    color: white;
+}
+
+/* Social */
+.social-box {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.social-box i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.social-box:hover {
+    transform: translateY(-5px);
+    background: #2575fc;
+    color: white;
+}
+
+/* Email */
+.email-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Remove default link style */
+.social-box {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Facebook */
+.social-box.facebook:hover {
+    background: #1877f2;
+    color: white;
+}
+
+/* GitHub */
+.social-box.github:hover {
+    background: #000000;
+    color: white;
+}
+
+/* Twitter (X) */
+.social-box.twitter:hover {
+    background: #000000;
+    color: white;
+}
+
+/* Instagram */
+.social-box.instagram:hover {
+    background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
+    color: white;
+}
+
+/* LinkedIn */
+.social-box.linkedin:hover {
+    background: #0a66c2;
+    color: white;
+}

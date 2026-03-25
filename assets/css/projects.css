@@ -1,0 +1,96 @@
+.projects-hero {
+    height: 40vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
+    color: white;
+}
+
+/* Flip Card */
+.project-card {
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.project-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Faces */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+/* Front */
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-front h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0,0,0,0.6);
+    padding: 5px 10px;
+}
+
+/* Back */
+.card-back {
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.desc {
+    font-size: 0.9rem;
+}
+
+.tech {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+.links {
+    margin-top: 15px;
+}
+
+/* حل مشكلة عدم القدرة على التمرير */
+.card-back {
+    overflow-y: auto;
+}
+
+/* تحسين شكل السكرول */
+.card-back::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-back::-webkit-scrollbar-thumb {
+    background: #2575fc;
+    border-radius: 10px;
+}
+
+/* تثبيت الأزرار في الأسفل */
+.links {
+    position: sticky;
+    bottom: 0;
+    background: inherit;
+    padding-top: 10px;
+}

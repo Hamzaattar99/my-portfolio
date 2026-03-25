@@ -1,0 +1,66 @@
+/* === Global Styles === */
+body {
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* === Animations Fade-In for Scroll === */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === Features Section === */
+section.py-5 .card, section.py-5 .shadow-sm {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section.py-5 .card:hover, section.py-5 .shadow-sm:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+section.container {
+    background: linear-gradient(to right, #f8f9fa, #eef2f7);
+    border-radius: 15px;
+    padding: 30px;
+}
