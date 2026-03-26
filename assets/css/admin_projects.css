@@ -1,0 +1,36 @@
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+}
+
+.project-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.modal-content {
+    background: #1e1e2f;
+    color: white;
+}
+
+.modal-body input,
+.modal-body textarea,
+.modal-body select {
+    margin-bottom: 10px;
+}

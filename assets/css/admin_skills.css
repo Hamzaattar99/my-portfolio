@@ -1,0 +1,52 @@
+/* Skills List */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Skill Item */
+.skill-item {
+    background: rgba(255,255,255,0.08);
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap; /* يجعلها تستجيب للشاشات الصغيرة */
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.skill-item > div {
+    flex: 1 1 auto; /* يسمح بالتقلص والتوسع */
+    margin-bottom: 5px; /* مسافة بين الصفوف عند الشاشات الصغيرة */
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Level Colors */
+.level {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-left: 10px;
+}
+
+.beginner { background: #6c757d; }
+.intermediate { background: #ffc107; color: black; }
+.advanced { background: #28a745; }
+
+/* Bootstrap Modal adjustments */
+.modal-content {
+    background: #1e1e2f;
+    color: white;
+}
+
+/* Input and form inside modal */
+.modal-body input,
+.modal-body select {
+    margin-bottom: 10px;
+}
