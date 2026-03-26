@@ -118,3 +118,9 @@ document.getElementById("searchInput").addEventListener("input", function(){
         document.getElementById("projectsContainer").innerHTML = html;
     });
 });
+
+function confirmLogout(){
+    if(confirm("Are you sure you want to logout?")){
+        window.location.href = "logout.php";
+    }
+}

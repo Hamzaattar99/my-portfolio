@@ -10,3 +10,9 @@ document.querySelectorAll('.admin-card').forEach(card => {
         card.style.transform = "rotateX(0) rotateY(0)";
     });
 });
+
+function confirmLogout(){
+    if(confirm("Are you sure you want to logout?")){
+        window.location.href = "logout.php";
+    }
+}

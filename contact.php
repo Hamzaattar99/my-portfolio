@@ -1,6 +1,18 @@
 <?php
 session_start();
 $language = $_SESSION['lang'] ?? 'en';
+
+
+require_once "includes/db.php";
+
+$settings = [];
+$result = $conn->query("SELECT name, value FROM settings");
+
+while($row = $result->fetch_assoc()){
+    $settings[$row['name']] = $row['value'];
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $language; ?>" dir="<?php echo ($language=='ar')?'rtl':'ltr'; ?>">
@@ -54,29 +66,31 @@ $language = $_SESSION['lang'] ?? 'en';
        <div class="col-md-6 text-center fade-in">
     <h3><?php echo ($language=='en') ? "Follow Me" : "تابعني"; ?></h3>
 
-    <a href="https://facebook.com/yourusername" target="_blank" class="social-box facebook">
+    <a href="<?php echo $settings['facebook'] ?? '#'; ?>" target="_blank" class="social-box facebook">
         <i class="bi bi-facebook"></i> Facebook
     </a>
 
-    <a href="https://github.com/yourusername" target="_blank" class="social-box github">
+    <a href="<?php echo $settings['github'] ?? '#'; ?>" target="_blank" class="social-box github">
         <i class="bi bi-github"></i> GitHub
     </a>
 
-    <a href="https://x.com/yourusername" target="_blank" class="social-box twitter">
+    <a href="<?php echo $settings['twitter'] ?? '#'; ?>" target="_blank" class="social-box twitter">
         <i class="bi bi-twitter"></i> X
     </a>
 
-    <a href="https://instagram.com/yourusername" target="_blank" class="social-box instagram">
+    <a href="<?php echo $settings['instagram'] ?? '#'; ?>" target="_blank" class="social-box instagram">
         <i class="bi bi-instagram"></i> Instagram
     </a>
 
-    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-box linkedin">
+    <a href="<?php echo $settings['linkedin'] ?? '#'; ?>" target="_blank" class="social-box linkedin">
         <i class="bi bi-linkedin"></i> LinkedIn
     </a>
 
     <!-- Email -->
     <div class="email-box mt-4">
-        <span id="email">your@email.com</span>
+        <span id="email">
+            <?php echo $settings['email'] ?? 'your@email.com'; ?>
+        </span>
         <button class="btn btn-outline-primary btn-sm" onclick="copyEmail()">
             <?php echo ($language=='en') ? "Copy" : "نسخ"; ?>
         </button>

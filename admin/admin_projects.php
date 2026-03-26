@@ -41,7 +41,7 @@ $count = $result->num_rows;
 
 <nav class="navbar navbar-dark bg-dark px-3">
     <span class="navbar-brand mb-0 h1">Admin Panel</span>
-    <a href="logout.php" class="btn btn-danger btn-sm">Logout</a>
+    <button class="btn btn-danger btn-sm" onclick="confirmLogout()">Logout</button>
 </nav>
 
 <div class="container py-4">

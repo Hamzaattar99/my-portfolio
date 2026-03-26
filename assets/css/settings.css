@@ -1,0 +1,25 @@
+.card-box {
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.card-box h5 {
+    margin-bottom: 15px;
+}
+
+input {
+    background: #1e1e2f !important;
+    color: white !important;
+    border: none !important;
+}
+
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.02);
+}

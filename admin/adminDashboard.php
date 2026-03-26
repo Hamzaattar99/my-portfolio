@@ -34,7 +34,7 @@ $exp_count = $conn->query("SELECT COUNT(*) as c FROM experience")->fetch_assoc()
 <!-- Navbar -->
 <nav class="admin-nav d-flex justify-content-between align-items-center px-4">
     <h4>Admin Panel</h4>
-    <a href="logout.php" class="btn btn-danger btn-sm">Logout</a>
+    <button class="btn btn-danger btn-sm" onclick="confirmLogout()">Logout</button>
 </nav>
 
 <!-- Dashboard -->
