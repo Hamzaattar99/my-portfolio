@@ -2,10 +2,10 @@
 session_start();
 require_once "../includes/db.php";
 // حماية الصفحة (مهم جدًا)
-/*if(!isset($_SESSION['admin'])){
+if(!isset($_SESSION['admin'])){
     header("Location: login.php");
     exit();
-}  */
+}  
 
 
 
@@ -61,7 +61,7 @@ $exp_count = $conn->query("SELECT COUNT(*) as c FROM experience")->fetch_assoc()
 
 <!-- Experience -->
 <div class="col-md-4">
-    <a href="experience.php" class="admin-card">
+    <a href="admin_experience.php" class="admin-card">
         <i class="bi bi-briefcase-fill"></i>
         <h5>Experience</h5>
         <p><?php echo $exp_count; ?> Items</p>
@@ -70,7 +70,7 @@ $exp_count = $conn->query("SELECT COUNT(*) as c FROM experience")->fetch_assoc()
 
 <!-- Admins -->
 <div class="col-md-4">
-    <a href="admins.php" class="admin-card">
+    <a href="admin.php" class="admin-card">
         <i class="bi bi-person-fill"></i>
         <h5>Admins</h5>
     </a>

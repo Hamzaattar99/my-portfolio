@@ -1,0 +1,16 @@
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.btn i {
+    pointer-events: none;
+}
+
+.modal-content {
+    border-radius: 12px;
+}

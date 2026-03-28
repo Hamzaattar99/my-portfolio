@@ -39,8 +39,15 @@ function login(){
         } else {
             attempts++;
 
+            let message = "Invalid credentials";
+
+            if(data.reason == "inactive")
+            {
+                message = "Your account is not active";
+            }
+            
             document.getElementById("messageBox").innerHTML =
-                "<div class='text-danger'>Invalid credentials</div>";
+                `<div class='text-danger'>${message}</div>`;
 
             if(attempts >= 3){
                 lockSystem();

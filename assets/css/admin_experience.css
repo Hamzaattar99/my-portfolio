@@ -1,0 +1,55 @@
+.exp-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.exp-item:hover {
+    transform: translateY(-3px);
+}
+
+.exp-info p {
+    color: #e0e0e0; /* لون أوضح */
+    line-height: 1.6;
+}
+
+.exp-info .text-muted {
+    color: #b0b0b0 !important; /* بدل الرمادي الباهت */
+}
+
+.exp-info h6 {
+    color: #9ad0ff; /* العربي بلون مميز خفيف */
+}
+
+.exp-item {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.exp-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.exp-info h5 {
+    margin: 0;
+}
+
+.company {
+    color: #aaa;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.exp-actions button {
+    margin-left: 5px;
+}

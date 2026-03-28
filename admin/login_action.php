@@ -7,6 +7,8 @@ header("Content-Type: application/json");
 $username = trim($_POST['username'] ?? '');
 $password = trim($_POST['password'] ?? '');
 
+$flag = true;
+
 if(empty($username) || empty($password)){
     echo json_encode(["success"=>false]);
     exit();
@@ -19,13 +21,41 @@ $result = $stmt->get_result();
 
 if($row = $result->fetch_assoc()){
 
-    if(password_verify($password, $row['password'])){
-        $_SESSION['admin'] = $row['user_id'];
+    if($row['is_active'] == 1)
+        {
 
-        echo json_encode(["success"=>true]);
-        
-        exit();
-    }
+        if(password_verify($password, $row['password'])){
+            $_SESSION['admin'] = $row['user_id'];
+            $_SESSION['role'] = $row['role'];
+            
+            echo json_encode(["success"=>true]);
+                $flag = false;
+                exit();
+            }
+
+        }
+
+        else
+        {
+            $_SESSION['is_active'] = $row['is_active'];
+            echo json_encode([
+                "success"=>false,
+                "reason"=>"inactive"
+            ]);
+            
+            $flag = false;
+         }
+
+         
 }
 
-echo json_encode(["success"=>false]);
+if($flag == true) {
+
+    
+echo json_encode([
+    "success"=>false,
+    "reason"=>"invalid"
+    
+    ]);
+
+}

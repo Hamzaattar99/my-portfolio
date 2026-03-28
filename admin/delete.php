@@ -26,7 +26,7 @@ if($type === "skill"){
     echo "Project deleted successfully.";
 
 } elseif($type === "user"){
-    $stmt = $conn->prepare("DELETE FROM users WHERE user_id = ?");
+    $stmt = $conn->prepare("DELETE FROM admin WHERE user_id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
     echo "User deleted successfully.";
