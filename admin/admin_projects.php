@@ -2,12 +2,8 @@
 session_start();
 require_once "../includes/db.php";
 
-/* حماية (اختياري)
-if(!isset($_SESSION['admin'])){
-    header("Location: login.php");
-    exit();
-}
-*/
+// حماية الصفحة (مهم جدًا)
+require_once "../includes/auth.php";
 
 // البحث اللحظي
 $search = $_GET['search'] ?? '';
@@ -36,12 +32,79 @@ $count = $result->num_rows;
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/adminDahs.css">
 <link rel="stylesheet" href="../assets/css/admin_projects.css">
+<link rel="stylesheet" href="../assets/css/admin_nav.css">
+
 </head>
 <body class="admin-body">
 
-<nav class="navbar navbar-dark bg-dark px-3">
-    <span class="navbar-brand mb-0 h1">Admin Panel</span>
-    <button class="btn btn-danger btn-sm" onclick="confirmLogout()">Logout</button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 shadow-sm">
+
+   <!-- Dashboard -->
+    <a class="navbar-brand fw-bold nav-animate" href="adminDashboard.php">
+        <i class="bi bi-speedometer2"></i> Admin Dashboard
+    </a>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate active" href="#">
+                    <i class="bi bi-kanban"></i> Projects
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="admin_skills.php">
+                    <i class="bi bi-lightning-charge"></i> Skills
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="admin.php">
+                    <i class="bi bi-people"></i> Admins
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="statistics.php">
+                    <i class="bi bi-bar-chart"></i> Statistics
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="settings.php">
+                    <i class="bi bi-gear"></i> Settings
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="admin_experience.php">
+                    <i class="bi bi-briefcase"></i> Experience
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="cv_builder.php">
+                    <i class="bi bi-file-earmark-pdf"></i> CV Builder
+                </a>
+            </li>
+
+            <!-- زر تسجيل الخروج -->
+            <li class="nav-item">
+                <button class="btn btn-outline-danger ms-lg-3 mt-2 mt-lg-0" onclick="confirmLogout()">
+                    <i class="bi bi-box-arrow-right"></i>Logout
+                </button>
+            </li>
+
+        </ul>
+
+    </div>
 </nav>
 
 <div class="container py-4">

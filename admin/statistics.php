@@ -2,6 +2,9 @@
 session_start();
 require_once "../includes/db.php";
 
+// حماية الصفحة (مهم جدًا)
+require_once "../includes/auth.php";
+
 // Counts
 $projects = $conn->query("SELECT COUNT(*) as c FROM projects")->fetch_assoc()['c'];
 $skills = $conn->query("SELECT COUNT(*) as c FROM skills")->fetch_assoc()['c'];
@@ -10,6 +13,10 @@ $admins = $conn->query("SELECT COUNT(*) as c FROM admin")->fetch_assoc()['c'];
 
 // آخر دخول (مؤقت - من السيشن)
 $last_login = $_SESSION['last_login'] ?? "First login";
+
+
+ $last_active_time = $_SESSION['last_activity'] ;
+ $last_user_ip = $_SESSION['user_ip']  ?? $_SESSION['error_ip']  ;
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +35,75 @@ $last_login = $_SESSION['last_login'] ?? "First login";
 
 <body class="admin-body">
 
-<nav class="navbar navbar-dark bg-dark px-3">
-    <span class="navbar-brand">Statistics</span>
-    <a href="logout.php" class="btn btn-danger btn-sm">Logout</a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 shadow-sm">
+
+   <!-- Dashboard -->
+    <a class="navbar-brand fw-bold nav-animate" href="adminDashboard.php">
+        <i class="bi bi-speedometer2"></i> Admin Dashboard
+    </a>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="admin_projects.php">
+                    <i class="bi bi-kanban"></i> Projects
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="admin_skills.php">
+                    <i class="bi bi-lightning-charge"></i> Skills
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="admin.php">
+                    <i class="bi bi-people"></i> Admins
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate active" href="#">
+                    <i class="bi bi-bar-chart"></i> Statistics
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="settings.php">
+                    <i class="bi bi-gear"></i> Settings
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="admin_experience.php">
+                    <i class="bi bi-briefcase"></i> Experience
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-animate" href="cv_builder.php">
+                    <i class="bi bi-file-earmark-pdf"></i> CV Builder
+                </a>
+            </li>
+
+            <!-- زر تسجيل الخروج -->
+            <li class="nav-item">
+                <button class="btn btn-outline-danger ms-lg-3 mt-2 mt-lg-0" onclick="confirmLogout()">
+                    <i class="bi bi-box-arrow-right"></i>Logout
+                </button>
+            </li>
+
+        </ul>
+
+    </div>
 </nav>
 
 <div class="container py-4">
@@ -80,6 +153,8 @@ $last_login = $_SESSION['last_login'] ?? "First login";
             <li>Last Login: <?php echo $last_login; ?></li>
             <li>System Running Normally</li>
             <li>Last Update: <?php echo date("Y-m-d H:i"); ?></li>
+            <li>Last Activity: <?php echo $last_active_time; ?></li>
+            <li>User IP (Last Active): <?php echo $last_user_ip; ?></li>
         </ul>
     </div>
 

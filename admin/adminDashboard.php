@@ -1,11 +1,10 @@
 <?php
 session_start();
 require_once "../includes/db.php";
+
+
 // حماية الصفحة (مهم جدًا)
-if(!isset($_SESSION['admin'])){
-    header("Location: login.php");
-    exit();
-}  
+require_once "../includes/auth.php";
 
 
 
@@ -89,6 +88,15 @@ $exp_count = $conn->query("SELECT COUNT(*) as c FROM experience")->fetch_assoc()
     <a href="settings.php" class="admin-card">
         <i class="bi bi-gear-fill"></i>
         <h5>Settings</h5>
+    </a>
+</div>
+
+<!-- CV Builder -->
+<div class="col-md-4">
+    <a href="cv_builder.php" class="admin-card">
+        <i class="bi bi-file-earmark-person"></i>
+        <h5>CV Builder</h5>
+        <p>Generate ATS Resume</p>
     </a>
 </div>
 

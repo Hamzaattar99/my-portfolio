@@ -33,4 +33,6 @@ if(empty($id)){
     $stmt = $conn->prepare("UPDATE admin SET username=?, role=?, is_active=? WHERE user_id=?");
     $stmt->bind_param("ssii",$username,$role,$status,$id);
     $stmt->execute();
+
+    $id = null;
 }

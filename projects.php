@@ -7,6 +7,8 @@ $language = $_SESSION['lang'] ?? 'en';
 
 
 $search = $_GET['search'] ?? '';
+$search = preg_replace("/[^a-zA-Z0-9\x{0600}-\x{06FF}\s]/u", "", $search); // to remove any special characters from the search 
+
 $sort = $_GET['sort'] ?? 'new';
 
 $order = "ORDER BY created_at DESC";
@@ -26,10 +28,15 @@ $result = $conn->query($query);
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <?php if($language=='ar'): ?>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-rtl@5.3.0/dist/css/bootstrap-rtl.min.css" rel="stylesheet">
-<?php else: ?>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        direction: ltr;
+        text-align: left;
+    }
+</style>
 <?php endif; ?>
 
 <link rel="stylesheet" href="assets/css/nav.css">
@@ -53,7 +60,7 @@ $result = $conn->query($query);
     <form class="row g-2">
         <div class="col-md-6">
             <input type="text" name="search" class="form-control"
-            placeholder="<?php echo ($language=='en')?'Search...':'بحث...'; ?>">
+            placeholder="<?php echo ($language=='en')?'Search...':'بحث...'; ?>" >
         </div>
         <div class="col-md-4">
             <select name="sort" class="form-control">

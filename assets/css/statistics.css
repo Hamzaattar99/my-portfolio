@@ -45,3 +45,59 @@
     padding: 15px;
     border-radius: 10px;
 }
+
+
+/* روابط الناف */
+.nav-link {
+    position: relative;
+    color: #ccc !important;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+/* خط متحرك تحت الرابط */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #0d6efd;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #fff !important;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* الأيقونات */
+.nav-link i {
+    margin-right: 6px;
+    transition: 0.3s;
+}
+
+.nav-link:hover i {
+    transform: scale(1.1);
+}
+
+/* تحسين الموبايل */
+@media (max-width: 991px) {
+    .nav-link {
+        text-align: center;
+        padding: 10px;
+    }
+}

@@ -28,6 +28,22 @@ if($row = $result->fetch_assoc()){
             $_SESSION['admin'] = $row['user_id'];
             $_SESSION['role'] = $row['role'];
             
+
+            $_SESSION['last_activity'] = time();
+
+            try
+            {
+                $ip = getUserIP();
+                $_SESSION['user_ip'] = $ip;
+            }
+            catch(Exception $ex)
+            {
+                $_SESSION['error_ip'] = "No ip address provided .";
+                $_SESSION['error_ip_reason'] = $ex -> getMessage();
+            }
+
+            session_write_close();
+
             echo json_encode(["success"=>true]);
                 $flag = false;
                 exit();
@@ -57,5 +73,29 @@ echo json_encode([
     "reason"=>"invalid"
     
     ]);
+
+}
+
+
+function getUserIP()
+{
+
+    if(!empty($_SERVER['HTTP_CLIENT_IP']))
+        {
+            return $_SERVER['HTTP_CLIENT_IP'];
+        }
+    
+    elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+        {
+            return explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0];
+        }
+    elseif(!empty($_SERVER['REMOTE_ADDR']))
+        {
+            return $_SERVER['REMOTE_ADDR'];
+        }
+    else{
+
+        return "UNKNOWN";
+    }
 
 }

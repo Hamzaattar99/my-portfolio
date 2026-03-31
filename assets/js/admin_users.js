@@ -1,8 +1,21 @@
-function openForm(){
-    document.getElementById("formTitle").innerText="Add Admin";
-    document.getElementById("admin_id").value="";
-    document.getElementById("username").value="";
-    document.getElementById("password").value="";
+function openFor(){
+
+  
+
+    let modal = new bootstrap.Modal(document.getElementById("adminModal"));
+    modal.show();
+
+    document.getElementById("formTitle").innerText = "Add Admin";
+
+    // مهم جداً
+    document.getElementById("admin_id").value = "";
+
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+
+    // إعادة القيم الافتراضية
+    document.getElementById("role").value = "admin";
+    document.getElementById("status").value = "1"; 
 }
 
 function editAdmin(id, username, role, status){
@@ -38,5 +51,11 @@ function deleteAdmin(id){
             headers:{'Content-Type':'application/x-www-form-urlencoded'},
             body:`id=${id}&type=user`
         }).then(()=>location.reload());
+    }
+}
+
+function confirmLogout(){
+    if(confirm("Are you sure you want to logout?")){
+        window.location.href = "logout.php";
     }
 }

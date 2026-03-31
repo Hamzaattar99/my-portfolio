@@ -1,0 +1,115 @@
+#preview {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+#preview h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#preview h3 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+#preview div {
+    margin-bottom: 10px;
+}
+
+
+/* تحسين preview */
+#preview {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    color: #fff; /* بدل الأسود */
+}
+
+/* صندوق العرض */
+.preview-box {
+    background: #0f172a;
+    border-radius: 12px;
+    padding: 15px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* iframe */
+.preview-box iframe {
+    width: 100%;
+    height: 650px;
+    border: none;
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* Loader */
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #22c55e;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* روابط الناف */
+.nav-link {
+    position: relative;
+    color: #ccc !important;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+/* خط متحرك تحت الرابط */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #0d6efd;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #fff !important;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* الأيقونات */
+.nav-link i {
+    margin-right: 6px;
+    transition: 0.3s;
+}
+
+.nav-link:hover i {
+    transform: scale(1.1);
+}
+
+/* تحسين الموبايل */
+@media (max-width: 991px) {
+    .nav-link {
+        text-align: center;
+        padding: 10px;
+    }
+}

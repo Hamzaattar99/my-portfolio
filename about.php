@@ -9,11 +9,16 @@ $language = $_SESSION['lang'] ?? 'en';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
 
-    <?php if($language=='ar'): ?>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-rtl@5.3.0/dist/css/bootstrap-rtl.min.css" rel="stylesheet">
-    <?php else: ?>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <?php endif; ?>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<?php if($language=='ar'): ?>
+<style>
+    body {
+        direction: ltr;
+        text-align: left;
+    }
+</style>
+<?php endif; ?>
 
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/foot.css">

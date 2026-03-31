@@ -21,11 +21,18 @@ while($row = $result->fetch_assoc()){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
 
-    <?php if($language=='ar'): ?>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-rtl@5.3.0/dist/css/bootstrap-rtl.min.css" rel="stylesheet">
-    <?php else: ?>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <?php endif; ?>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<?php if($language=='ar'): ?>
+<style>
+    body {
+        direction: ltr;
+        text-align: left;
+    }
+
+    
+</style>
+<?php endif; ?>
 
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/foot.css">
@@ -52,10 +59,10 @@ while($row = $result->fetch_assoc()){
     <div class="row">
         <div class="col-md-6 fade-in">
             <h3><?php echo ($language=='en') ? "Send Message" : "أرسل رسالة"; ?></h3>
-            <form>
-                <input type="text" class="form-control mb-3" placeholder="<?php echo ($language=='en') ? "Your Name" : "اسمك"; ?>">
-                <input type="email" class="form-control mb-3" placeholder="Email">
-                <textarea class="form-control mb-3" rows="5" placeholder="<?php echo ($language=='en') ? "Message" : "رسالتك"; ?>"></textarea>
+            <form action="includes/email_send.php" method="POST">
+                <input type="text" class="form-control mb-3 nm" placeholder="<?php echo ($language=='en') ? "Your Name" : "اسمك"; ?>" required>
+                <input type="email" class="form-control mb-3 em" placeholder="<?php echo ($language=='en') ? "Email" : "بريدك الاكتروني"; ?>" required>
+                <textarea class="form-control mb-3 ms" rows="5" placeholder="<?php echo ($language=='en') ? "Message" : "رسالتك"; ?>" required></textarea >
                 <button type="submit" class="btn btn-primary w-100">
                     <?php echo ($language=='en') ? "Send" : "إرسال"; ?>
                 </button>
