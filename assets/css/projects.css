@@ -1,13 +1,26 @@
 .projects-hero {
     height: 40vh;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
+    /* background: linear-gradient(to right, #6a11cb, #2575fc); */
+     background: linear-gradient(to right, #141e30, #243b55);
     color: white;
 }
 
 /* Flip Card */
 .project-card {
     perspective: 1000px;
+}
+
+.bti{
+    background-color: #243b55;
+    border-color: #243b55;
+    box-shadow: #ccc;
+}
+
+.bti:hover{
+     background-color: white;
+     color: black;
+    border-color: #243b55;
+    box-shadow: #ccc;
 }
 
 .card-inner {

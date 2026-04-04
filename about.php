@@ -20,9 +20,9 @@ $language = $_SESSION['lang'] ?? 'en';
 </style>
 <?php endif; ?>
 
-    <link rel="stylesheet" href="assets/css/nav.css">
-    <link rel="stylesheet" href="assets/css/foot.css">
-    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/nav.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="assets/css/foot.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="assets/css/about.css?v=<?php echo time(); ?>">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -52,8 +52,8 @@ $language = $_SESSION['lang'] ?? 'en';
             <h2><?php echo ($language=='en') ? "Who I Am" : "من أنا"; ?></h2>
             <p>
             <?php echo ($language=='en') ?
-            "I am an IT student and backend developer interested in cybersecurity and web development. I build real projects and continuously improve my skills." :
-            "أنا طالب تقنية معلومات ومطور Backend مهتم بالأمن السيبراني وتطوير الويب. أبني مشاريع حقيقية وأطور مهاراتي باستمرار."; ?>
+            "I am interested in backend development, with a focus on designing efficient, secure, and scalable server-side applications." :
+            "أنا مهتم بتطوير الأنظمة ، مع التركيز على تصميم تطبيقات خادم فعالة وآمنة وقابلة للتوسع."; ?>
             </p>
         </div>
         <div class="col-md-6 text-center fade-in">
@@ -84,14 +84,76 @@ $language = $_SESSION['lang'] ?? 'en';
     <h2><?php echo ($language=='en') ? "My Goal" : "هدفي"; ?></h2>
     <p>
     <?php echo ($language=='en') ?
-    "My goal is to become a Security Engineer and build secure systems." :
-    "هدفي أن أصبح مهندس أمن وأن أبني أنظمة آمنة."; ?>
+    "To design, develop, and maintain scalable and secure backend systems that support high-performance applications 
+    <br>and deliver reliable services." :
+    "تطوير وتصميم وصيانة أنظمة قابلة للتوسع وآمنة تدعم تطبيقات عالية الأداء وتوفر خدمات موثوقة."; ?>
     </p>
+</section>
+
+
+<?php $cvFile = "assets/uploads/cv/cv.pdf"; ?>
+
+<section class="container py-5 text-center fade-in">
+    <div class="cv-box mx-auto">
+
+        <h2 class="mb-3">
+            <?php echo ($language=='en') ? "My Resume" : "سيرتي الذاتية"; ?>
+        </h2>
+
+        <p class="mb-4 ">
+            <?php echo ($language=='en') ? 
+            "Download my professional CV (ATS optimized)" : 
+            "قم بتحميل سيرتي الذاتية الاحترافية"; ?>
+        </p>
+
+        <?php if(file_exists($cvFile)): ?>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+
+            <!-- Download -->
+            <a href="<?= $cvFile ?>" download class="btn cv-btn-primary">
+                <i class="bi bi-download"></i>
+                <?php echo ($language=='en') ? "Download CV" : "تحميل CV"; ?>
+            </a>
+
+            <!-- Preview -->
+            <a href="<?= $cvFile ?>" target="_blank" class="btn cv-btn-outline">
+                <i class="bi bi-eye"></i>
+                <?php echo ($language=='en') ? "Preview" : "عرض"; ?>
+            </a>
+
+        </div>
+
+        <?php
+            $timestamp = filemtime($cvFile);
+
+            if($language == 'ar'){
+                $dateText = "آخر تحديث: " . date("Y-m-d", $timestamp);
+            }else {
+                $dateText = "Last updated: " . date("Y-m-d", $timestamp);
+            }
+        ?>
+
+        <p class="mt-3 small ">
+            <?= $dateText ?>
+        </p>
+
+        <?php else: ?>
+
+        <div class="alert alert-warning">
+            <?php echo ($language=='en') ? 
+            "CV not available yet" : 
+            "لم يتم إنشاء السيرة الذاتية بعد"; ?>
+        </div>
+
+        <?php endif; ?>
+
+    </div>
 </section>
 
 <!-- CTA -->
 <section class="cta text-center py-5">
-    <a href="contact.php" class="btn btn-primary btn-lg">
+    <a href="contact.php" class="btn btn-primary btn-lg bti">
         <?php echo ($language=='en') ? "Contact Me" : "تواصل معي"; ?>
     </a>
 </section>

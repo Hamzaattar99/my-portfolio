@@ -34,9 +34,9 @@ while($row = $result->fetch_assoc()){
 </style>
 <?php endif; ?>
 
-    <link rel="stylesheet" href="assets/css/nav.css">
-    <link rel="stylesheet" href="assets/css/foot.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/nav.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="assets/css/foot.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="assets/css/contact.css?v=<?php echo time(); ?>">
 
     <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -60,10 +60,10 @@ while($row = $result->fetch_assoc()){
         <div class="col-md-6 fade-in">
             <h3><?php echo ($language=='en') ? "Send Message" : "أرسل رسالة"; ?></h3>
             <form action="includes/email_send.php" method="POST">
-                <input type="text" class="form-control mb-3 nm" placeholder="<?php echo ($language=='en') ? "Your Name" : "اسمك"; ?>" required>
-                <input type="email" class="form-control mb-3 em" placeholder="<?php echo ($language=='en') ? "Email" : "بريدك الاكتروني"; ?>" required>
-                <textarea class="form-control mb-3 ms" rows="5" placeholder="<?php echo ($language=='en') ? "Message" : "رسالتك"; ?>" required></textarea >
-                <button type="submit" class="btn btn-primary w-100">
+                <input type="text"  name="nm" class="form-control mb-3 nm" placeholder="<?php echo ($language=='en') ? "Your Name" : "اسمك"; ?>" required>
+                <input type="email" name="em"  class="form-control mb-3 em" placeholder="<?php echo ($language=='en') ? "Email" : "بريدك الاكتروني"; ?>" required>
+                <textarea name="ms"  class="form-control mb-3 ms" rows="5" placeholder="<?php echo ($language=='en') ? "Message" : "رسالتك"; ?>" required></textarea >
+                <button type="submit" class="btn btn-primary w-100 bti">
                     <?php echo ($language=='en') ? "Send" : "إرسال"; ?>
                 </button>
             </form>
@@ -98,7 +98,7 @@ while($row = $result->fetch_assoc()){
         <span id="email">
             <?php echo $settings['email'] ?? 'your@email.com'; ?>
         </span>
-        <button class="btn btn-outline-primary btn-sm" onclick="copyEmail()">
+        <button class="btn btn-outline-primary btn-sm bb" onclick="copyEmail()">
             <?php echo ($language=='en') ? "Copy" : "نسخ"; ?>
         </button>
     </div>
@@ -112,6 +112,19 @@ while($row = $result->fetch_assoc()){
 
 <script src="assets/js/contact.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
 
+    function emailSentSuccessfully()
+    {
+        let params = new URLSearchParams(window.location.search);
+        let value = params.get("success");
+
+        if(value === 1)
+        {
+            alert("Email Sent Successfully");
+        }
+    }
+
+</script>
 </body>
 </html>

@@ -39,9 +39,9 @@ $result = $conn->query($query);
 </style>
 <?php endif; ?>
 
-<link rel="stylesheet" href="assets/css/nav.css">
-<link rel="stylesheet" href="assets/css/foot.css">
-<link rel="stylesheet" href="assets/css/projects.css">
+<link rel="stylesheet" href="assets/css/nav.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="assets/css/foot.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="assets/css/projects.css?v=<?php echo time(); ?>">
 </head>
 
 <body style="font-family: <?php echo ($language=='ar')?'Cairo':'Roboto'; ?>, sans-serif;">
@@ -70,7 +70,7 @@ $result = $conn->query($query);
             </select>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-primary w-100">
+            <button class="btn btn-primary w-100 bti">
                 <?php echo ($language=='en')?'Apply':'تطبيق'; ?>
             </button>
         </div>

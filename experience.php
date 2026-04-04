@@ -25,9 +25,9 @@ $result = $conn->query("SELECT * FROM experience ORDER BY start_date DESC");
 </style>
 <?php endif; ?>
 
-<link rel="stylesheet" href="assets/css/nav.css">
-<link rel="stylesheet" href="assets/css/foot.css">
-<link rel="stylesheet" href="assets/css/experience.css">
+<link rel="stylesheet" href="assets/css/nav.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="assets/css/foot.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="assets/css/experience.css?v=<?php echo time(); ?>">
 
 <!-- Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">

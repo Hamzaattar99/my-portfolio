@@ -1,8 +1,8 @@
 /* Hero */
 .about-hero {
     height: 60vh;
-    /* background: linear-gradient(to right, #141e30, #243b55); */
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #141e30, #243b55);
+    /* background: linear-gradient(to right, #6a11cb, #2575fc); */
     color: white;
 }
 
@@ -31,13 +31,13 @@
 
 .skill-box:hover {
     transform: translateY(-5px);
-    background: #2575fc;
+    background: #243b55;
     color: white;
 }
 
 /* CTA */
 .cta {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #141e30, #243b55);
     color: white;
     border-radius: 9px;
 
@@ -58,4 +58,92 @@
 .fade-in.appear {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* CV Section */
+.cv-box {
+    background: linear-gradient(to right, #141e30, #243b55);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: 0.4s;
+    color: #ccc;
+}
+
+.cv-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    
+}
+
+/* Buttons */
+.cv-btn-primary {
+    background-color: #ccc;
+    border-color: #243b55;
+    box-shadow: #ccc;
+    color: #141e30;
+    
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cv-btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+     background-color: #243b55;
+     color: #ccc;
+    border-color: #243b55;
+    box-shadow: #ccc;
+}
+
+.cv-btn-outline {
+    border: 2px solid #ccc;
+    color: #ccc;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cv-btn-outline:hover {
+    background: #243b55;
+    color: white;
+    transform: scale(1.05);
+}
+
+.pi{
+    color: #ccc;
+}
+
+.bti{
+    background-color: #ccc;
+    border-color: #243b55;
+    box-shadow: #ccc;
+    color: #141e30;
+}
+
+.bti:hover{
+     background-color: #243b55;
+     color: #ccc;
+    border-color: #243b55;
+    box-shadow: #ccc;
+}
+
+.cv-box {
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

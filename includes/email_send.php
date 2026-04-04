@@ -33,8 +33,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 $mail -> Host = 'smtp.gmail.com';
 
                 $mail -> SMTPAuth = true;
-                $mail -> Username = "hamzahu933@gmail.com";
-                $mail -> Password = "";
+                $mail -> Username = "7amzagamer2070@gmail.com";
+                $mail -> Password = "tmlscfkzutrufjkq";
                 
                 $mail -> SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 

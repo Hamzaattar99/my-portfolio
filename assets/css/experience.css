@@ -1,7 +1,8 @@
 /* Hero */
 .exp-hero {
     height: 40vh;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    /* background: linear-gradient(to right, #6a11cb, #2575fc); */
+    background: linear-gradient(to right, #141e30, #243b55);
     color: white;
 }
 
@@ -9,7 +10,7 @@
 .timeline {
     position: relative;
     padding-left: 30px;
-    border-left: 3px solid #2575fc;
+    border-left: 3px solid #243b55;
 }
 
 /* Item */
@@ -24,7 +25,7 @@
 .timeline-icon {
     position: absolute;
     left: -18px;
-    background: #2575fc;
+    background: #243b55;
     color: white;
     width: 35px;
     height: 35px;
@@ -52,7 +53,7 @@
 
 /* Text */
 .company {
-    color: #2575fc;
+    color: #243b55;
     font-weight: 500;
 }
 

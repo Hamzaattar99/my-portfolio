@@ -1,8 +1,8 @@
 /* Hero */
 .skills-hero {
     height: 50vh;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    /* background: linear-gradient(to right, #141e30, #243b55); */
+    /* background: linear-gradient(to right, #6a11cb, #2575fc); */
+    background: linear-gradient(to right, #141e30, #243b55);
     color: white;
 }
 
@@ -33,7 +33,7 @@
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: bold;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #141e30, #243b55);
     color: white;
 }
 
@@ -47,7 +47,8 @@
 .progress-bar {
     width: 0;
     height: 100%;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #1156e0, #243b55);
+   
     transition: width 1.5s ease;
 }
 

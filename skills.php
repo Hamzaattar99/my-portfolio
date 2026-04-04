@@ -25,9 +25,9 @@ $result = $conn->query("SELECT * FROM skills ORDER BY created_at DESC");
 </style>
 <?php endif; ?>
 
-    <link rel="stylesheet" href="assets/css/nav.css">
-    <link rel="stylesheet" href="assets/css/foot.css">
-    <link rel="stylesheet" href="assets/css/skills.css">
+    <link rel="stylesheet" href="assets/css/nav.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="assets/css/foot.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="assets/css/skills.css?v=<?php echo time(); ?>">
 </head>
 
 <body style="font-family: <?php echo ($language=='ar')?'Cairo':'Roboto'; ?>, sans-serif;">

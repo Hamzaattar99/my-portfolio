@@ -14,17 +14,17 @@ $language = $_SESSION['lang'] ?? 'en';
 <?php if($language=='ar'): ?>
 <style>
     body {
-        direction: rtl;
-        text-align: right;
+        direction: ltr;
+        text-align: left;
     }
 
    
 </style>
 <?php endif; ?>
     
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/nav.css">
-    <link rel="stylesheet" href="assets/css/foot.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="assets/css/nav.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="assets/css/foot.css?v=<?php echo time(); ?>">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body style="font-family: <?php echo ($language=='ar')?'Cairo':'Roboto'; ?>, sans-serif; background:#f8f9fa;">
@@ -35,12 +35,12 @@ $language = $_SESSION['lang'] ?? 'en';
 <section class="hero d-flex align-items-center justify-content-center text-center" style="height:100vh;">
     <div class="container">
         <h1 class="display-4 fw-bold fade-in">
-            <?php echo ($language=='en') ? "Hi, I'm Hamza" : "مرحباً، أنا حمزة"; ?>
+            <?php echo ($language=='en') ? "Hello There, I'm Hamza" : "مرحباً، أنا حمزة"; ?>
         </h1>
         <p class="lead mt-3 fade-in">
             <?php echo ($language=='en') ? "I am a Backend & Web Developer. I build modern and responsive websites." : "أنا مطور ويب و Backend. أقوم ببناء مواقع حديثة ومتجاوبة."; ?>
         </p>
-        <a href="#projects" class="btn btn-primary btn-lg mt-3">
+        <a href="projects.php" class="btn btn-primary btn-lg mt-3 bti">
             <?php echo ($language=='en') ? "View My Projects" : "عرض مشاريعي"; ?>
         </a>
     </div>

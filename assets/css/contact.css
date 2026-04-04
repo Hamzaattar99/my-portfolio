@@ -1,8 +1,8 @@
 /* Hero */
 .contact-hero {
     height: 50vh;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
+    /* background: linear-gradient(to right, #6a11cb, #2575fc); */
+    background: linear-gradient(to right, #141e30, #243b55);
     color: white;
 }
 
@@ -25,8 +25,34 @@
 
 .social-box:hover {
     transform: translateY(-5px);
-    background: #2575fc;
+    background: #243b55;
     color: white;
+}
+
+.bti{
+     background-color: #243b55;
+    border-color: #243b55;
+    box-shadow: #ccc;
+}
+.bti:hover{
+     background-color: white;
+     color: black;
+    border-color: #243b55;
+    box-shadow: #ccc;
+}
+
+.bb{
+    background-color: #243b55;
+    border-color: #243b55;
+    box-shadow: #ccc;
+    color: white;
+}
+
+.bb:hover{
+     background-color: white;
+     color: black;
+    border-color: #243b55;
+    box-shadow: #ccc;
 }
 
 /* Email */
